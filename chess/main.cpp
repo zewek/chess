@@ -21,7 +21,7 @@ chesscolour lift_piece_colour;
 int main() {
     // 1. 基础窗口初始化
     glfwInit();
-    GLFWwindow *window=glfwCreateWindow(600, 900, "POKER CHESS", nullptr, nullptr);
+    GLFWwindow *window=glfwCreateWindow(600, 908, "POKER CHESS", nullptr, nullptr);
     glfwMakeContextCurrent(window);
     gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
@@ -96,7 +96,7 @@ int main() {
                 }
                 if (ImGui::Button(text.c_str(), ImVec2(100.0f, 150.0f))) {
                     if (lift_piece) {
-                        if (lift_piece_pos.x==i and lift_piece_pos.y==j) {
+                        if (lift_piece_pos.x==i and lift_piece_pos.y==j) { //两按钮重叠，触发的是此按钮
                             lift_piece=false;
                         } else if (board.check(lift_piece_pos.x, lift_piece_pos.y, i, j)) {
                             //printf("%d %d\n", board.king_sum(RED), board.king_sum(BLUE));

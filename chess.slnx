@@ -3,5 +3,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/解决方案项/">
+    <File Path="LICENSE" />
+    <File Path="readme.md" />
+  </Folder>
   <Project Path="chess/chess.vcxproj" Id="34a1ba40-a64b-49fc-b27c-8f8ea782bdfc" />
 </Solution>

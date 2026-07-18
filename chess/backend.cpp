@@ -69,17 +69,16 @@ bool chessboard::check(int x1, int y1, int x2, int y2) {
 
 void chessboard::move(int x1, int y1, int x2, int y2) {
 	turn=!turn;
+	if (board[x2][y2].number==13) sum[board[x2][y2].colour]--;
 	if (same(board[x1][y1].number, board[x2][y2].number)) {
+		if (board[x1][y1].number==13) sum[board[x1][y1].colour]--;
 		board[x1][y1].number=0;
 		board[x2][y2].number=0;
-		if (board[x2][y2].number==13) sum[board[x2][y2].colour]--;
 	} else if (board[x1][y1].number==1 or board[x1][y1].number>10) {
-		if (board[x2][y2].number==13) sum[board[x2][y2].colour]--;
 		board[x2][y2].colour=board[x1][y1].colour;
 		board[x2][y2].number=board[x1][y1].number;
 		board[x2][y2].suit=board[x1][y1].suit;
 		board[x1][y1].number=0;
-		
 	} else if (board[x1][y1].number<=10) {
 		board[x2][y2].colour=board[x1][y1].colour;
 		board[x2][y2].number=board[x1][y1].number-board[x2][y2].number;
